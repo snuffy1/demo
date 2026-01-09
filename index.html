@@ -19,7 +19,7 @@
                     },
                     fontFamily: {
                         serif: ['Georgia', 'serif'],
-                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                        sans: ['Sweet Sans Pro', 'Helvetica', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -27,6 +27,37 @@
     </script>
     
     <style>
+        @font-face {
+            font-family: 'Sweet Sans Pro';
+            src: url('Sweet Sans Pro/SweetSansProRegular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sweet Sans Pro';
+            src: url('Sweet Sans Pro/SweetSansProItalic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Sweet Sans Pro';
+            src: url('Sweet Sans Pro/SweetSansProLight.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sweet Sans Pro';
+            src: url('Sweet Sans Pro/SweetSansProMedium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sweet Sans Pro';
+            src: url('Sweet Sans Pro/SweetSansProBold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
         html.lenis, html.lenis body { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -50,7 +81,7 @@
             <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
             <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
                 <div class="absolute inset-0 bg-black/40 z-10"></div> 
-                <img src="landing.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+                <video src="banner-video.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
             </div>
         </section>
 
@@ -65,14 +96,13 @@
     <div id="reveal-wrapper" class="relative w-full h-screen overflow-hidden bg-black">
         <section id="features" class="relative w-full h-full bg-black text-white flex flex-col items-center justify-center">
             <div class="container mx-auto px-4 text-center relative z-10">
-                <h2 class="features-title text-3xl font-semibold mb-20 tracking-widest text-ghalya-gold gsap-hidden">THE ESSENCE OF QUALITY</h2>
                 <div class="relative inline-block w-full max-w-7xl mx-auto">
                     <img src="Group 6.png" alt="Ghalya Features" id="features-bg-img" class="relative z-10 w-full h-auto object-contain gsap-hidden">
                     
-                    <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                    <div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none">
                         <div class="relative w-[30%] max-w-[360px] aspect-square flex items-start justify-center">
-                            <img src="bgcircle.png" alt="Circle" id="feature-circle" class="absolute w-[70%] h-auto object-contain mt-4 gsap-hidden">
-                            <img src="perfume.png" alt="Perfume" id="feature-product" class="absolute w-[140%] h-[140%] max-w-none object-contain gsap-hidden origin-center">
+                            <img src="bgcircle.png" alt="Circle" id="feature-circle" class="absolute w-[90%] h-auto object-contain mt-4 gsap-hidden">
+                            <img src="perfume.png" alt="Perfume" id="feature-product" class="absolute w-[210%] h-[210%] max-w-none object-contain gsap-hidden origin-center">
                         </div>
                     </div>
                 </div>
