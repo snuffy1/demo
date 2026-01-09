@@ -77,20 +77,109 @@
     </div>
 
     <div id="intro-wrapper" class="relative w-full h-screen overflow-hidden">          
-        <section id="hero" class="absolute inset-0 z-10 w-full h-full flex items-center justify-center overflow-hidden bg-black">        
-            <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
-            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-                <div class="absolute inset-0 bg-black/40 z-10"></div> 
-                <video src="banner-video.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
-            </div>
-        </section>
+        <section id="hero" class="absolute inset-0 z-10 w-full h-full overflow-hidden bg-black text-white font-sans">
 
-        <section id="second-section" class="absolute inset-0 z-20 w-full h-full bg-black text-white flex flex-col items-center justify-center" style="clip-path: inset(100% 0 0 0);">
-            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-                <div class="absolute inset-0 bg-black/40 z-10"></div> 
-                <img src="second.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-            </div>
-        </section>
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-bg absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <video src="banner-video.mp4" autoplay muted loop playsinline
+      class="w-full h-full object-cover">
+    </video>
+  </div>
+
+  <!-- TOP LEFT : MENU -->
+  <div class="absolute top-8 left-8 z-30 flex items-center gap-2 text-xs tracking-widest uppercase gsap-hidden" id="hero-menu">
+    <span>☰</span>
+    <span>Menu</span>
+  </div>
+
+  <!-- TOP RIGHT : SEARCH + CART -->
+  <div class="absolute top-8 right-8 z-30 flex items-center gap-6 text-xs tracking-widest uppercase gsap-hidden" id="hero-actions">
+    <span>Search</span>
+    <span>Cart</span>
+  </div>
+
+  <!-- CENTER LOGO -->
+  <img
+    src="logo.png"
+    alt="Bin Khadim Logo"
+    id="hero-logo"
+    class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden"
+  />
+
+
+
+  <!-- LEFT BOTTOM CONTENT -->
+  <div class="absolute bottom-16 left-8 md:left-16 z-30 max-w-sm gsap-hidden" id="hero-content">
+    <h2 class="text-sm tracking-widest uppercase mb-4">Ghalya</h2>
+
+    <p class="text-sm text-white/80 leading-relaxed mb-6">
+      Enchant with a subtle scent that leaves <br />
+      a lasting impression
+    </p>
+
+    <a
+      href="#"
+      class="inline-block text-xs tracking-widest uppercase border-b border-white pb-1 hover:opacity-70 transition"
+    >
+      Discover Natural Fragrance
+    </a>
+  </div>
+
+</section>
+
+
+      <section
+  id="second-section"
+  class="absolute inset-0 z-20 w-full h-full overflow-hidden bg-black text-white"
+  style="clip-path: inset(100% 0 0 0);"
+>
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="hero-bg absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <img
+      src="second.png"
+      alt="Ghalya Background"
+      class="w-full h-full object-cover grayscale-[20%]"
+    />
+  </div>
+
+  <!-- LEFT CONTENT -->
+  <div class="absolute left-8 md:left-20 bottom-32 z-30 max-w-md">
+
+    <!-- HEADING -->
+    <h2 class="text-xs tracking-[0.35em] uppercase text-white/80 mb-4">
+      Exceptional
+    </h2>
+
+    <!-- SUB TEXT -->
+    <p class="text-sm leading-relaxed text-white/80 mb-8">
+      Your Signature Scent to The <br />
+      Classical Beauty
+    </p>
+
+    <!-- CTA LINKS -->
+    <div class="flex items-center gap-8 text-xs tracking-widest uppercase">
+      <a
+        href="#"
+        class="border-b border-white pb-1 hover:opacity-70 transition"
+      >
+        Shop the New Fragrance
+      </a>
+
+      <a
+        href="#"
+        class="border-b border-white/50 pb-1 text-white/70 hover:opacity-70 transition"
+      >
+        Learn More
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
     </div>
 
     <div id="reveal-wrapper" class="relative w-full h-screen overflow-hidden bg-black">
@@ -106,6 +195,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>
     </div>
@@ -128,9 +218,55 @@
     </div>
 </section>
 
-    <section id="fourth-section" class="relative w-full h-screen z-30 bg-black">
-        <img src="fourth.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-    </section>
+   <section
+  id="fourth-section"
+  class="relative w-full h-screen bg-black text-white overflow-hidden"
+>
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    src="fourth.png"
+    alt="Ghalya Background"
+    class="absolute inset-0 w-full h-full object-cover grayscale-[20%]"
+  />
+
+  <!-- DARK OVERLAY (optional but recommended) -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- LEFT CONTENT -->
+  <div class="absolute left-8 md:left-20 bottom-32 z-30 max-w-md">
+
+    <!-- TITLE -->
+    <h2 class="text-xs tracking-[0.35em] uppercase text-white/80 mb-4">
+      The House
+    </h2>
+
+    <!-- SUBTITLE -->
+    <p class="text-sm leading-relaxed text-white/80 mb-8">
+      Crafted for Luxury
+    </p>
+
+    <!-- CTA LINKS -->
+    <div class="flex items-center gap-8 text-xs tracking-widest uppercase">
+      <a
+        href="#"
+        class="border-b border-white pb-1 hover:opacity-70 transition"
+      >
+        Shop the New Fragrance
+      </a>
+
+      <a
+        href="#"
+        class="border-b border-white/50 pb-1 text-white/70 hover:opacity-70 transition"
+      >
+        Learn More
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
 
 </main>
 

@@ -18,7 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
     heroTl
         .fromTo(".hero-bg", { opacity: 0, scale: 1.1 }, { opacity: 1, scale: 1, duration: 2.5, ease: "power2.inOut" })
-        .fromTo("#hero-logo", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 1 }, "-=2.0");
+        .fromTo("#hero-logo", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 1 }, "-=2.0")
+        .fromTo("#hero-menu", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8 }, "-=0.5")
+        .fromTo("#hero-actions", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.8 }, "-=0.8")
+        .fromTo("#hero-brand", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1.2 }, "-=0.6")
+        .fromTo("#hero-content", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1 }, "-=0.8");
 
     // 4. INTRO SECTION REVEAL (Hero -> Second Section)
     const introTl = gsap.timeline({
