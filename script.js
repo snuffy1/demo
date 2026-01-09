@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clipPath: "circle(100% at 50% 50%)", 
             duration: 1,
             ease: "none"
-        }, 0.4) 
+        }, 0.2) 
         
         .to("#fourth-mask", {
             clipPath: "circle(150% at 50% 100%)", 
@@ -118,6 +118,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+// ================= NEW: INTRO REVEAL TIMELINE =================
+    const introTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#intro-wrapper",
+            start: "top top",      // Start pinning when wrapper hits top
+            end: "+=100%",         // Scroll distance equal to viewport height
+            scrub: true,           // Smooth scrubbing
+            pin: true,             // Pin the container
+            anticipatePin: 1
+        }
+    });
+
+    introTl.to("#second-section", {
+        clipPath: "inset(0% 0% 0% 0%)", // Reveals fully from bottom to top
+        ease: "none"
+    });
 
 
 // ================= 6. BANNER INTERACTION =================

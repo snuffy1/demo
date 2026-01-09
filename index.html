@@ -46,20 +46,24 @@
         </button>
     </div>
 
-    <section id="hero" class="relative h-[calc(100vh-40px)] w-full flex items-center justify-center overflow-hidden">        
-        <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
-        <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-            <div class="absolute inset-0 bg-black/40 z-10"></div> 
-            <img src="Layer 3.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-        </div>
-    </section>
+    <div id="intro-wrapper" class="relative w-full h-screen overflow-hidden">
+        
+        <section id="hero" class="absolute inset-0 z-10 w-full h-full flex items-center justify-center overflow-hidden">        
+            <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
+            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
+                <div class="absolute inset-0 bg-black/40 z-10"></div> 
+                <img src="Layer 3.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+            </div>
+        </section>
 
-    <section class="relative bg-black text-white flex flex-col items-center justify-center min-h-screen">
-        <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-            <div class="absolute inset-0 bg-black/40 z-10"></div> 
-            <img src="second.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-        </div>
-    </section>
+        <section id="second-section" class="absolute inset-0 z-20 w-full h-full bg-black text-white flex flex-col items-center justify-center" style="clip-path: inset(100% 0 0 0);">
+            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
+                <div class="absolute inset-0 bg-black/40 z-10"></div> 
+                <img src="second.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+            </div>
+        </section>
+
+    </div>
 
     <div id="reveal-wrapper" class="relative w-full h-screen overflow-hidden">
         
