@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // ================= 1. LENIS SMOOTH SCROLL SETUP =================
     const lenis = new Lenis({
-        duration: 1.5, // Higher = smoother/slower feel
+        duration: 1.5, 
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
         smoothWheel: true,
         smoothTouch: false,
@@ -29,18 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
-        // Fade in Background
         .fromTo(".hero-bg", 
             { opacity: 0, scale: 1.1 }, 
             { opacity: 1, scale: 1, duration: 2.5, ease: "power2.inOut" }
         )
-        // Fade in Logo
         .fromTo("#hero-logo",
             { opacity: 0, y: -20 },
             { opacity: 1, y: 0, duration: 1 },
             "-=2.0"
         )
-        // Main Text / Elements
         .fromTo(".hero-text",
             { opacity: 0, y: 30 },
             { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 },
@@ -63,13 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
             { opacity: 0, y: 30 },
             { opacity: 1, y: 0, duration: 0.8 }
         )
-        // Animate Group 6 (Icons)
         .fromTo("#features-bg-img", 
             { opacity: 0, scale: 0.95 }, 
             { opacity: 1, scale: 1, duration: 1 },
             "-=0.3"
         )
-        // Animate the Frame (Spin in + Infinite Loop)
         .fromTo("#feature-circle", 
             { opacity: 0, scale: 0, rotation: -180 }, 
             { 
@@ -89,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             "-=0.8"
         )
-        // Animate the Bottle (Pop up)
         .fromTo("#feature-product",
             { opacity: 0, scale: 0, y: 20 },
             { opacity: 1, scale: 1, y: 0, duration: 1, ease: "elastic.out(1, 0.5)" },
@@ -98,12 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ================= 5. PINNED REVEAL SEQUENCE =================
-    // Logic: Pin Wrapper -> Zoom Video (Center) -> Zoom Image (Bottom)
     const revealTl = gsap.timeline({
         scrollTrigger: {
             trigger: "#reveal-wrapper", 
             start: "top top",           
-            end: "+=300%",              // Pin duration: 300% of viewport height
+            end: "+=300%",              
             scrub: true,                
             pin: true,                  
             anticipatePin: 1
@@ -111,15 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     revealTl
-        // Step 1: Video expands from CENTER
+        // Position parameter '0.5' creates the delay
         .to("#video-mask", {
             clipPath: "circle(100% at 50% 50%)", 
             duration: 1,
             ease: "none"
-        })
-        // Step 2: Fourth Section expands from BOTTOM
+        }, 0.4) 
+        
         .to("#fourth-mask", {
-            clipPath: "circle(150% at 50% 100%)", // 150% radius ensures corners are covered
+            clipPath: "circle(150% at 50% 100%)", 
             duration: 1,
             ease: "none"
         });
@@ -128,13 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ================= 6. BANNER INTERACTION =================
-document.getElementById('close-banner').addEventListener('click', function() {
-    const banner = document.getElementById('top-banner');
-    const hero = document.getElementById('hero');
-    
-    banner.style.display = 'none';
-    hero.style.height = '100vh'; 
-    
-    // Important: Refresh ScrollTrigger coordinates after layout change
-    ScrollTrigger.refresh();
-});
+// Note: This is outside DOMContentLoaded to ensure the element exists or 
+// you can move it inside if the script runs in head. 
+// Since this is usually at end of body, it is fine here.
+const closeBtn = document.getElementById('close-banner');
+if(closeBtn) {
+    closeBtn.addEventListener('click', function() {
+        const banner = document.getElementById('top-banner');
+        const hero = document.getElementById('hero');
+        
+        if(banner) banner.style.display = 'none';
+        if(hero) hero.style.height = '100vh'; 
+        
+        ScrollTrigger.refresh();
+    });
+}
