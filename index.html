@@ -6,8 +6,8 @@
     <title>GHALYA Parfum - Exquisite Essence</title>
     
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.0.45/dist/lenis.css">
-    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -16,6 +16,10 @@
                         'ghalya-gold': '#E6C776',
                         'ghalya-red': '#EF5350',
                         'banner-bg': '#D9D1C3', 
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'serif'],
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -23,90 +27,134 @@
     </script>
     
     <style>
-        /* LENIS & SCROLL FIXES */
         html.lenis, html.lenis body { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
         .lenis.lenis-stopped { overflow: hidden; }
         .lenis.lenis-scrolling iframe { pointer-events: none; }
-        
-        /* GSAP VISIBILITY */
         .gsap-hidden { opacity: 0; visibility: hidden; }
-        
-        /* PREVENT SCROLL JUMPING ON RELOAD */
         html { scroll-behavior: auto; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden font-sans">
 
-    <div id="top-banner" class="bg-banner-bg text-gray-800 py-2 px-4 flex justify-between items-center text-sm relative z-50">
-        <p class="mx-auto">Get 10% off on your first purchase! Use code «<u>NEWOFF</u>» at the checkout.</p>
-        <button id="close-banner" class="text-gray-800 hover:text-gray-600 focus:outline-none font-bold px-2">
-            X
-        </button>
-    </div>
+    <main id="content-wrapper" class="relative z-10 bg-gray-50 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
 
-    <div id="intro-wrapper" class="relative w-full h-screen overflow-hidden">
-        
-        <section id="hero" class="absolute inset-0 z-10 w-full h-full flex items-center justify-center overflow-hidden">        
-            <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
-            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-                <div class="absolute inset-0 bg-black/40 z-10"></div> 
-                <img src="Layer 3.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-            </div>
-        </section>
+        <div id="top-banner" class="bg-banner-bg text-gray-800 py-2 px-4 flex justify-between items-center text-sm relative z-50">
+            <p class="mx-auto">Get 10% off on your first purchase! Use code «<u>NEWOFF</u>» at the checkout.</p>
+            <button id="close-banner" class="text-gray-800 hover:text-gray-600 focus:outline-none font-bold px-2">X</button>
+        </div>
 
-        <section id="second-section" class="absolute inset-0 z-20 w-full h-full bg-black text-white flex flex-col items-center justify-center" style="clip-path: inset(100% 0 0 0);">
-            <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
-                <div class="absolute inset-0 bg-black/40 z-10"></div> 
-                <img src="second.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
-            </div>
-        </section>
+        <div id="intro-wrapper" class="relative w-full h-screen overflow-hidden">
+            
+            <section id="hero" class="absolute inset-0 z-10 w-full h-full flex items-center justify-center overflow-hidden bg-black">        
+                <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
+                <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
+                    <div class="absolute inset-0 bg-black/40 z-10"></div> 
+                    <img src="Layer 3.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+                </div>
+            </section>
 
-    </div>
+            <section id="second-section" class="absolute inset-0 z-20 w-full h-full bg-black text-white flex flex-col items-center justify-center" style="clip-path: inset(100% 0 0 0);">
+                <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
+                    <div class="absolute inset-0 bg-black/40 z-10"></div> 
+                    <img src="second.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+                </div>
+            </section>
 
-    <div id="reveal-wrapper" class="relative w-full h-screen overflow-hidden">
-        
-        <section id="features" class="relative w-full h-full bg-black text-white flex flex-col items-center justify-center">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="features-title text-3xl font-semibold mb-20 tracking-widest text-ghalya-gold gsap-hidden">THE ESSENCE OF QUALITY</h2>
-                <div class="relative inline-block w-full max-w-7xl mx-auto">
-                    <img src="Group 6.png" alt="Ghalya Features" id="features-bg-img" class="relative z-10 w-full h-auto object-contain gsap-hidden">
-                    
-                    <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-                        <div class="relative w-[30%] max-w-[360px] aspect-square flex items-start justify-center">
-                            <img src="bgcircle.png" alt="Ghalya Parfum Bottle" id="feature-circle" class="absolute w-[70%] h-auto object-contain mt-4 gsap-hidden">
-                            <img src="perfume.png" alt="Decorative Frame" id="feature-product" class="absolute w-[140%] h-[140%] max-w-none object-contain gsap-hidden origin-center">
+        </div>
+
+        <div id="reveal-wrapper" class="relative w-full h-screen overflow-hidden bg-black">
+            
+            <section id="features" class="relative w-full h-full bg-black text-white flex flex-col items-center justify-center">
+                <div class="container mx-auto px-4 text-center relative z-10">
+                    <h2 class="features-title text-3xl font-semibold mb-20 tracking-widest text-ghalya-gold gsap-hidden">THE ESSENCE OF QUALITY</h2>
+                    <div class="relative inline-block w-full max-w-7xl mx-auto">
+                        <img src="Group 6.png" alt="Ghalya Features" id="features-bg-img" class="relative z-10 w-full h-auto object-contain gsap-hidden">
+                        
+                        <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                            <div class="relative w-[30%] max-w-[360px] aspect-square flex items-start justify-center">
+                                <img src="bgcircle.png" alt="Circle" id="feature-circle" class="absolute w-[70%] h-auto object-contain mt-4 gsap-hidden">
+                                <img src="perfume.png" alt="Perfume" id="feature-product" class="absolute w-[140%] h-[140%] max-w-none object-contain gsap-hidden origin-center">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="video-section" class="absolute top-0 left-0 w-full h-full z-20 pointer-events-none">
-            <div class="hero-bg absolute inset-0  z-0">
-                <div class="absolute inset-0  z-10"></div>
-                <div id="video-mask" class="w-full h-full absolute inset-0 z-0 overflow-hidden" style="clip-path: circle(0% at 50% 50%);">
-                    <video src="video.mp4" autoplay muted loop playsinline class="w-full h-full object-cover grayscale-[20%]"></video>
+            <section id="video-section" class="absolute top-0 left-0 w-full h-full z-20 pointer-events-none">
+                <div class="hero-bg absolute inset-0 z-0">
+                    <div id="video-mask" class="w-full h-full absolute inset-0 z-0 overflow-hidden" style="clip-path: circle(0% at 50% 50%);">
+                        <video src="video.mp4" autoplay muted loop playsinline class="w-full h-full object-cover grayscale-[20%]"></video>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="fourth-section" class="absolute top-0 left-0 w-full h-full z-30 pointer-events-none">
-             <div class="hero-bg absolute inset-0 z-0">
-                <div class="absolute inset-0 z-10"></div> 
-                <div id="fourth-mask" class="w-full h-full absolute inset-0 z-0 overflow-hidden" style="clip-path: circle(0% at 50% 100%);">
-                    <img src="fourth.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+            <section id="fourth-section" class="absolute top-0 left-0 w-full h-full z-30 pointer-events-none">
+                 <div class="hero-bg absolute inset-0 z-0">
+                    <div id="fourth-mask" class="w-full h-full absolute inset-0 z-0 overflow-hidden" style="clip-path: circle(0% at 50% 100%);">
+                        <img src="fourth.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            
+        </div>
+
+    </main>
+
+    <footer id="reveal-footer" class="fixed bottom-0 left-0 w-full h-auto min-h-[500px] -z-10 bg-[#0a0a0a] text-ghalya-gold flex items-center justify-center overflow-hidden py-12">
         
-    </div>
-
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+             <img src="logo.png" class="w-full h-full object-cover scale-150 grayscale">
+        </div>
+    
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm tracking-widest">
+            
+            <div class="space-y-6">
+                <h3 class="text-2xl font-serif text-white">GHALYA</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    An olfactory journey through the essence of luxury. Crafted for the few who know the difference.
+                </p>
+            </div>
+    
+            <div class="space-y-6">
+                <h4 class="text-white font-semibold uppercase">Explore</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Collection</a></li>
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Heritage</a></li>
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Boutiques</a></li>
+                </ul>
+            </div>
+    
+            <div class="space-y-6">
+                <h4 class="text-white font-semibold uppercase">Legal</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Terms</a></li>
+                    <li><a href="#" class="hover:text-ghalya-red transition-colors">Shipping</a></li>
+                </ul>
+            </div>
+    
+            <div class="space-y-6">
+                <h4 class="text-white font-semibold uppercase">Newsletter</h4>
+                <div class="flex flex-col gap-4">
+                    <input type="email" placeholder="Your Email" class="bg-transparent border-b border-gray-700 py-2 focus:outline-none focus:border-ghalya-red text-white placeholder-gray-600 transition-colors">
+                    <button class="text-left text-ghalya-red hover:text-white transition-colors uppercase text-xs font-bold tracking-widest">
+                        Subscribe ->
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+        
+        <div class="absolute bottom-4 w-full text-center text-xs text-gray-700 uppercase tracking-widest">
+            © 2024 Bin Khadim Parfums. All Rights Reserved.
+        </div>
+    </footer>
+<script src="script.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
 
 </body>
 </html>
