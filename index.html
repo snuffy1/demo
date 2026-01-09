@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHALYA Parfum - Exquisite Essence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ghalya-gold': '#E6C776',
+                        'ghalya-red': '#EF5350',
+                        'banner-bg': '#D9D1C3', // Beige color from the image
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .gsap-hidden { opacity: 0; visibility: hidden; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden font-sans">
+
+    <div id="top-banner" class="bg-banner-bg text-gray-800 py-2 px-4 flex justify-between items-center text-sm relative z-50">
+        <p class="mx-auto">Get 10% off on your first purchase! Use code «<u>NEWOFF</u>» at the checkout.</p>
+        <button id="close-banner" class="text-gray-800 hover:text-gray-600 focus:outline-none font-bold px-2">
+            X
+        </button>
+    </div>
+
+    <section id="hero" class="relative h-[calc(100vh-40px)] w-full flex items-center justify-center overflow-hidden">        
+        <img src="logo.png" alt="Bin Khadim Logo" id="hero-logo" class="absolute top-8 left-1/2 -translate-x-1/2 w-32 md:w-48 z-30 gsap-hidden">
+        <div class="hero-bg absolute inset-0 z-0 gsap-hidden">
+            <div class="absolute inset-0 bg-black/40 z-10"></div> 
+            <img src="Layer 3.png" alt="Ghalya Background" class="w-full h-full object-cover grayscale-[20%]">
+        </div>
+
+     
+    </section>
+<section id="" class="relative bg-black text-white flex flex-col items-center justify-center min-h-[80vh]">
+        
+            <div class="relative inline-block ">
+                
+                <img src="second.png" alt="Ghalya Features" class="relative z-10 w-full h-auto object-contain">
+
+            </div>
+    </section>
+    <section id="features" class="relative py-24 bg-black text-white flex flex-col items-center justify-center min-h-[80vh]">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="features-title text-3xl font-semibold mb-20 tracking-widest text-ghalya-gold gsap-hidden">THE ESSENCE OF QUALITY</h2>
+            
+            <div class="relative inline-block w-full max-w-7xl mx-auto">
+                
+                <img src="Group 6.png" alt="Ghalya Features" id="features-bg-img" class="relative z-10 w-full h-auto object-contain gsap-hidden">
+
+                <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                    <div class="relative w-[30%] max-w-[360px] aspect-square flex items-start justify-center">
+                                                <img src="bgcircle.png" alt="Ghalya Parfum Bottle" id="feature-circle" class="absolute w-[70%] h-auto object-contain mt-4 gsap-hidden">
+
+                        <img src="perfume.png" alt="Decorative Frame" id="feature-product" class="absolute w-[140%] h-[140%] max-w-none object-contain gsap-hidden origin-center">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Banner Close Functionality
+        document.getElementById('close-banner').addEventListener('click', function() {
+            const banner = document.getElementById('top-banner');
+            const hero = document.getElementById('hero');
+            banner.style.display = 'none';
+            hero.style.height = '100vh'; // Expand hero to full screen
+        });
+    </script>
+</body>
+</html>
